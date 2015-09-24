@@ -59,7 +59,8 @@ class Liqpay_Liqpay_PaymentController extends Mage_Core_Controller_Front_Action
             $order->loadByIncrementId($last_real_order_id);
 
             $html = $this->getLayout()->createBlock('liqpay/redirect')->toHtml();
-            $this->getResponse()->setHeader('Content-type', 'text/html; charset=windows-1251')->setBody($html);
+            //$this->getResponse()->setHeader('Content-type', 'text/html; charset=windows-1251')->setBody($html);
+            $this->getResponse()->setBody($html);
 
             $order->addStatusToHistory(
                 $order->getStatus(),
